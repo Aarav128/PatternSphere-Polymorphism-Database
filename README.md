@@ -7,3 +7,13 @@ To run:
 - run the "load" scripts first
 - then run the "create" scripts
 - the database should be set up -- then you can run the "view" scripts to view them
+
+Current goals:
+- Add author/origin, thumbnail, and some privacy/permissions(TBD) to **pattern_head** (these are the ubiquitious pattern features)
+- Add other related data to the separate tables, including but not limited to:
+  - links
+  - child/parent patterns
+  - any extra text
+  - any pictures to display
+- create a page to display the patterns in their polymorphic states
+- add the other language versions of the patterns
