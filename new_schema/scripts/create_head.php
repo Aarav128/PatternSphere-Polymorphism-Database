@@ -4,7 +4,7 @@ $user = 'root';
 $password = 'root';
 $database = '25_new_schema';
 
-$nodeSqlPath = __DIR__ . '/../node.sql';
+$nodeSqlPath = __DIR__ . '/../loaded_tables/node.sql';
 
 // Database connection
 $conn = new mysqli($host, $user, $password, $database);
