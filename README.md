@@ -1,7 +1,7 @@
 # Patterns Database
 
 
-To recreate:
+To run:
 
 - Make sure username, password, and database names are correct in each file
 - run the "load" scripts first
