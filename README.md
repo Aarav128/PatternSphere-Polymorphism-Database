@@ -1,8 +1,9 @@
 # Patterns Database
 https://www.publicsphereproject.org/
 
-To run:
+Storing and displaying the patterns using a polymorphic schema.
 
+To run & recreate everything in an empty phpMyAdmin Database:
 - Make sure username, password, and database names are correct in each file
 - run the "load" scripts first
 - then run the "create" scripts
@@ -16,4 +17,5 @@ Current goals:
   - any extra text
   - any pictures to display
 - create a page to display the patterns in their polymorphic states
-- add the other language versions of the patterns
+- add the other language versions of the patterns to the database and a way to view them differently.
+- Move on from nid to a new numbering in the new pattern language -- this might be difficult to do
