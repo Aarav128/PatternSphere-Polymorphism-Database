@@ -5,7 +5,7 @@ $password = 'root';
 $database = '25_new_schema';  // change to your actual database name
 
 // Path to the SQL file relative to this script
-$sqlFile = __DIR__ . '/../node.sql';
+$sqlFile = __DIR__ . '/../loaded_tables/node.sql';
 
 // Connect to MySQL
 $conn = new mysqli($host, $user, $password, $database);
