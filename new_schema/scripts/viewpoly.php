@@ -17,9 +17,10 @@ $sql = "
     SELECT 
         ph.nid,
         ph.title,
+        ph.author_name,
         other.field_context_value
     FROM 
-        pattern_head ph
+        pattern_head_with_author ph
     JOIN 
         field_context_value other ON ph.nid = other.nid
 ";
@@ -31,13 +32,14 @@ echo "<h2>Combined Table Data</h2>";
 
 if ($result->num_rows > 0) {
     echo "<table border='1' cellpadding='8'>";
-    echo "<tr><th>nid</th><th>Title</th><th>Context</th></tr>";
+    echo "<tr><th>nid</th><th>Title</th><th>Context</th><th>Author</th></tr>";
 
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . htmlspecialchars($row['nid']) . "</td>";
         echo "<td>" . htmlspecialchars($row['title']) . "</td>";
         echo "<td>" . htmlspecialchars($row['field_context_value']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['title']) . "</td>";
         echo "</tr>";
     }
 
