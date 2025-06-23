@@ -7,6 +7,7 @@ To run & recreate everything in an empty phpMyAdmin Database:
 - Make sure username, password, and database names are correct in each file
 - run the "load" scripts first
 - then run the "create" scripts
+- rather than running the create_head, there is a premade pattern head in the created_tables folder
 - the database should be set up -- then you can run the "view" scripts to view them
 
 Current goals:
