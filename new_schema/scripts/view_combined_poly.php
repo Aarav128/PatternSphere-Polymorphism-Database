@@ -39,13 +39,11 @@ $tableNames = [
     "field_version_value"
 ];
 
-$extraFields = ["title", "author_name"];
-
 $conn = new mysqli($host, $user, $pass, $dbname);
 $conn->set_charset("utf8mb4");
 
-// Fetch nids, titles, and author_names
-$nidResult = $conn->query("SELECT DISTINCT nid, title, author_name FROM pattern_head_with_author ORDER BY nid ASC");
+// Fetch nids, titles, author_names, and pattern_set
+$nidResult = $conn->query("SELECT DISTINCT nid, title, author_name, pattern_set FROM pattern_head_with_author ORDER BY nid ASC");
 
 // Start HTML
 echo "<!DOCTYPE html><html><head><title>Combined Pattern Data</title>
@@ -58,7 +56,7 @@ echo "<!DOCTYPE html><html><head><title>Combined Pattern Data</title>
 </head><body>";
 
 echo "<h2>Combined Pattern Data</h2>";
-echo "<table><tr><th>nid</th><th>title</th><th>author_name</th>";
+echo "<table><tr><th>pattern_set</th><th>nid</th><th>title</th><th>author_name</th>";
 
 foreach ($tableNames as $col) {
     echo "<th>$col</th>";
@@ -69,9 +67,10 @@ echo "</tr>";
 while ($nidRow = $nidResult->fetch_assoc()) {
     $nid = (int)$nidRow['nid'];
     $rowData = [
+        "pattern_set" => $nidRow["pattern_set"],
         "nid" => $nid,
         "title" => $nidRow["title"],
-        "author_name" => $nidRow["author_name"]
+        "author_name" => $nidRow["author_name"],
     ];
     $hasAll = true;
 
@@ -88,7 +87,7 @@ while ($nidRow = $nidResult->fetch_assoc()) {
     }
 
     echo "<tr>";
-    foreach (["nid", "title", "author_name"] as $key) {
+    foreach (["pattern_set", "nid", "title", "author_name"] as $key) {
         echo "<td>" . htmlspecialchars($rowData[$key]) . "</td>";
     }
     foreach ($tableNames as $col) {
