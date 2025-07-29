@@ -24,7 +24,7 @@ while ($row = $result->fetch_assoc()) {
     $columns[] = $row['Field'];
 }
 
-// Remove 'nid' column
+// extract 'nid' column
 $columns = array_filter($columns, fn($col) => $col !== 'nid');
 
 foreach ($columns as $col) {
@@ -37,7 +37,7 @@ foreach ($columns as $col) {
             nid INT,
             `$col` TEXT
         )
-    ";
+    ";  
     $insertQuery = "
         INSERT INTO `$tableName` (nid, `$col`)
         SELECT nid, `$col` FROM content_type_pattern
