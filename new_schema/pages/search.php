@@ -29,7 +29,7 @@ $connPattern->set_charset("utf8mb4");
 </head>
 <body>
     <h2>Search Patterns by Keywords</h2>
-    <form method="get">
+    <form method="get" autocomplete="off"       >
         <input type="text" name="keywords" placeholder="Search for pattern here">
         <input type="submit" value="Search">
     </form>
