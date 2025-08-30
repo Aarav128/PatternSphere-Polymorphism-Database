@@ -5,10 +5,10 @@ Storing and displaying the patterns using a polymorphic schema.
 
 To run & recreate everything in an empty phpMyAdmin Database:
 - Make sure username, password, and database names are correct in each file
-- run the "load" scripts first
-- then run the "create" scripts
-- rather than running the create_head, there is a premade pattern head in the created_tables folder
-- the database should be set up -- then you can run the "view" scripts to view them
+- run the "load" scripts under essential first
+- then run the "create" scripts under essential
+-   rather than running the create_head, there is a premade pattern head in the created_tables folder
+- the database should be set up -- then you can run the scripts under "pages"
 
 Current goals:
 - Add author/origin, thumbnail, and some privacy/permissions(TBD) to **pattern_head** (these are the ubiquitious pattern features)
